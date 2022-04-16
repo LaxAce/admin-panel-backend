@@ -1,7 +1,7 @@
 {
   "name": "admin-panel-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "User management with registration and authentication",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
@@ -15,7 +15,8 @@
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.0",
-    "mongoose-type-email": "^1.1.2"
+    "mongoose-type-email": "^1.1.2",
+    "nodemon": "^2.0.15"
   },
   "type": "module"
 }

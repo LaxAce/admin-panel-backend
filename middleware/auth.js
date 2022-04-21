@@ -8,13 +8,10 @@ const verifyToken = (req, res, next) => {
 
     if (token) {
         jwt.verify(token, process.env.TOKEN_KEY, (err, decodedToken) => {
-            if (err) {
-                console.log(err);
-                res.redirect('/login')
-            }
+            if (err)  res.status(400).json({msg: 'Invalid Token'});
             next();
         })
-    } else res.redirect('/login');
+    } else res.status(403).json({msg: 'You are not authorized. Please login!'});
 }
 
 export default verifyToken;

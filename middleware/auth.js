@@ -8,7 +8,7 @@ const verifyToken = (req, res, next) => {
 
     if (token) {
         jwt.verify(token, process.env.TOKEN_KEY, (err, decodedToken) => {
-            if (err)  res.status(400).json({msg: 'Invalid Token'});
+            if (err) return res.status(400).json({msg: 'Invalid Token'});
             next();
         })
     } else res.status(403).json({msg: 'You are not authorized. Please login!'});
